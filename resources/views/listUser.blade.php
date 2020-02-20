@@ -2,3 +2,6 @@
 
 <p> nome: {{ $user->name }} </p>
 <p> email: {{ $user->email }} </p>
+<p> {{ date('d/m/Y H:i', strtotime($user->created_at )) }}</p>
+
+<a href="{{ route('user.formEdit', ['user' => $user->id] )}}">editar</a>
