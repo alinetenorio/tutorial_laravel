@@ -23,10 +23,18 @@ Route::get('/', function () {
 /*
 *    USER
 */
-Route::get('users', 'Form\\TestController@listAllUsers')->name('users.listAll');
-Route::get('users/new', 'Form\\TestController@formAddUser')->name('user.formAdd');
-Route::post('users/store', 'Form\\TestController@addUser')->name('user.add');
-Route::get('users/{user}', 'Form\\TestController@listUser')->name('user.list');
+Route::group(['namespace' => 'Form'], function(){
 
-Route::get('users/edit/{user}', 'Form\\TestController@formEditUser')->name('user.formEdit');
-Route::put('users/update/{user}', 'Form\\TestController@editUser')->name('user.edit');
+    Route::get('users', 'TestController@listAllUsers')->name('users.listAll');
+
+    Route::get('users/new', 'TestController@formAddUser')->name('user.formAdd');
+    Route::post('users/store', 'TestController@addUser')->name('user.add');
+    
+    Route::get('users/{user}', 'TestController@listUser')->name('user.list');
+    
+    Route::get('users/edit/{user}', 'TestController@formEditUser')->name('user.formEdit');
+    Route::put('users/update/{user}', 'TestController@editUser')->name('user.edit');
+    
+    Route::delete('users/destroy/{user}', 'TestController@removeUser')->name('user.remove');
+
+});

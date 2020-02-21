@@ -60,20 +60,33 @@ class TestController extends Controller
     }
 
     public function editUser(User $user, Request $request){
-        dd($request);
+        //dd($request, $user);
         
-        /*
+        
         $user->name = $request->name;
-        $user->email = $request->email;
-        $user->password = Hash::make($request->pass);
+
+        if(filter_var($request->email, FILTER_VALIDATE_EMAIL)){
+            $user->email = $request->email;
+        }
+        
+        if(!empty($request->pass)){
+            $user->password = Hash::make($request->pass);
+        }
         $user->save();
 
         return redirect()->route('users.listAll');
-        */
+        
     }
 
 
     /* 
     * ==== DELETE
     */
+
+    public function removeUser(User $user){
+        //dd($user);
+        $user->delete();
+
+        return redirect()->route('users.listAll');
+    }
 }
