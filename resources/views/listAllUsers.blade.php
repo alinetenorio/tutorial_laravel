@@ -5,9 +5,9 @@
     <p> nome: {{ $user->name }} </p>
     <p> email: {{ $user->email }} </p>
 
-    <a href = "{{ route('user.list', ['user'=>$user->id]) }}">Ver usuário</a>
+    <a href = "{{ route('user.show', ['user'=>$user->id]) }}">Ver usuário</a>
     
-    <form action="{{route('user.remove', ['user'=>$user->id])}}" method="post">
+    <form action="{{route('user.destroy', ['user'=>$user])}}" method="post">
         @csrf
         @method('delete')
         <input type="submit" value="remover">

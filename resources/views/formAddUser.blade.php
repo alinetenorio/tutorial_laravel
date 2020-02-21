@@ -1,4 +1,4 @@
-<form method='post' action="{{ route('user.add')}}">
+<form method='post' action="{{ route('user.store')}}">
     @csrf
 
     nome:<input name='name'/></br>

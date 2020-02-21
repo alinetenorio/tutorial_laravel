@@ -11,18 +11,19 @@
 |
 */
 
-use App\Http\Controllers\UserController;
+use App\Http\Controllers\FormAuto\TestController;
 
 /*
 *   HOME
 */
-Route::get('/', function () {
+Route ::get('/', function () {
     return view('welcome');
 });
 
 /*
 *    USER
 */
+/*
 Route::group(['namespace' => 'Form'], function(){
 
     Route::get('users', 'TestController@listAllUsers')->name('users.listAll');
@@ -38,3 +39,7 @@ Route::group(['namespace' => 'Form'], function(){
     Route::delete('users/destroy/{user}', 'TestController@removeUser')->name('user.remove');
 
 });
+*/
+
+//Route::resource('user', 'FormAuto\\TestController')->names('user')->parameters(["user"=>"usuario"]);
+Route::resource('user', 'FormAuto\\TestController');
