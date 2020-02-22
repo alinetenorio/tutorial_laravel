@@ -45,5 +45,7 @@ Route::group(['namespace' => 'Form'], function(){
 
 //CMD: php artisan make::Controller <name> --resource --model=User
 //CMD: php artisan route:list
-Route::resource('user', 'FormAuto\\TestController');
+Route::resource('user', 'UserController');
 Route::resource('post', 'PostController');
+Route::resource('category', 'CategoryController');
+Route::resource('address', 'AddressController');
