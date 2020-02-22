@@ -42,4 +42,8 @@ Route::group(['namespace' => 'Form'], function(){
 */
 
 //Route::resource('user', 'FormAuto\\TestController')->names('user')->parameters(["user"=>"usuario"]);
+
+//CMD: php artisan make::Controller <name> --resource --model=User
+//CMD: php artisan route:list
 Route::resource('user', 'FormAuto\\TestController');
+Route::resource('post', 'PostController');
