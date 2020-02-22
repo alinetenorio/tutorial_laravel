@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Address;
 use App\Adress;
 use Illuminate\Http\Request;
 
@@ -25,6 +26,7 @@ class AddressController extends Controller
     public function create()
     {
         //
+        return view('formAddAddress');
     }
 
     /**
@@ -36,6 +38,11 @@ class AddressController extends Controller
     public function store(Request $request)
     {
         //
+        $address = new Address();
+        //dd($request->except(['_token']));
+        $address->create($request->except(['_token']));
+
+        return redirect(route('address.create'));
     }
 
     /**
@@ -44,9 +51,11 @@ class AddressController extends Controller
      * @param  \App\Adress  $adress
      * @return \Illuminate\Http\Response
      */
-    public function show(Address $adress)
+    public function show(Address $address)
     {
         //
+
+        return view('listAddress', ['address'=>$address]);
     }
 
     /**
@@ -55,7 +64,7 @@ class AddressController extends Controller
      * @param  \App\Adress  $adress
      * @return \Illuminate\Http\Response
      */
-    public function edit(Address $adress)
+    public function edit(Address $address)
     {
         //
     }
@@ -67,7 +76,7 @@ class AddressController extends Controller
      * @param  \App\Adress  $adress
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Address $adress)
+    public function update(Request $request, Address $address)
     {
         //
     }
@@ -78,7 +87,7 @@ class AddressController extends Controller
      * @param  \App\Adress  $adress
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Address $adress)
+    public function destroy(Address $address)
     {
         //
     }
