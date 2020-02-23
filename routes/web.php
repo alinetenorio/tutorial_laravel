@@ -49,3 +49,7 @@ Route::resource('user', 'UserController');
 Route::resource('post', 'PostController');
 Route::resource('category', 'CategoryController');
 Route::resource('address', 'AddressController');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
