@@ -11,7 +11,8 @@ class Post extends Model
     protected $fillable = [
         'title',
         'subtitle',
-        'content'
+        'content',
+        'user_id'
     ];
 
     public $timestamps = false;
@@ -20,6 +21,15 @@ class Post extends Model
     //called by the controller 
     public function setTitleAttribute($value){
         $this->attributes['title'] = $value;
-        $this->attributes['slug'] = Str ::slug($value);
+        $this->attributes['slug'] = Str::slug($value);
     }
+
+    public function user(){
+        return $this->belongsTo(User::class, 'user_id', 'id');
+    }
+
+    public function categories(){
+        return $this->belongsToMany(Category::class, 'posts_categories', 'post_id', 'category_id');
+    }
+    
 }

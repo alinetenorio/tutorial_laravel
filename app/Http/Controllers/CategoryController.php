@@ -25,6 +25,7 @@ class CategoryController extends Controller
     public function create()
     {
         //
+        return view('formAddCategory');
     }
 
     /**
@@ -47,6 +48,7 @@ class CategoryController extends Controller
     public function show(Category $category)
     {
         //
+        return view('listCategory', ['category'=>$category]);
     }
 
     /**
