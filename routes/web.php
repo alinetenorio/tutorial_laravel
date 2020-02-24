@@ -17,7 +17,7 @@ use App\Http\Controllers\FormAuto\TestController;
 *   HOME
 */
 Route ::get('/', function () {
-    return view('welcome');
+    return view('bootstrap');
 });
 
 /*
@@ -53,3 +53,4 @@ Route::resource('address', 'AddressController');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
