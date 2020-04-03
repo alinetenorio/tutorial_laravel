@@ -2,12 +2,17 @@
 
 namespace App\Http\Controllers;
 
-use App\User;
+use App\Post;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Redirect;
 
-class UserController extends Controller
+class PostController extends Controller
 {
+
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -26,7 +31,7 @@ class UserController extends Controller
     public function create()
     {
         //
-        return view('formAddUser');
+        return view('formAddPost');
     }
 
     /**
@@ -37,34 +42,40 @@ class UserController extends Controller
      */
     public function store(Request $request)
     {
+       
         //
-        //dd($request->except(['_token']));
-        $user = new User();
-        $user->create($request->except(['_token']));
+        $post = new Post();
+        /*
+        $post->title = $request->title;
+        $post->subtitle = $request->subtitle;
+        $post->content = $request->content;
+        $post->save();
+        */
+        //All not null attributes should be set to fillable
+        //in the model
+        $post->create($request->except(['_token']));
 
-        return redirect(route('user.create'));
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\User  $user
+     * @param  \App\Post  $post
      * @return \Illuminate\Http\Response
      */
-    public function show(User $user)
+    public function show(Post $post)
     {
-        //dd($user);
-
-        return view('listUser', ['user'=>$user]);
+        //
+        return view('listPost', ['post'=>$post]);
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\User  $user
+     * @param  \App\Post  $post
      * @return \Illuminate\Http\Response
      */
-    public function edit(User $user)
+    public function edit(Post $post)
     {
         //
     }
@@ -73,10 +84,10 @@ class UserController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\User  $user
+     * @param  \App\Post  $post
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, User $user)
+    public function update(Request $request, Post $post)
     {
         //
     }
@@ -84,10 +95,10 @@ class UserController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\User  $user
+     * @param  \App\Post  $post
      * @return \Illuminate\Http\Response
      */
-    public function destroy(User $user)
+    public function destroy(Post $post)
     {
         //
     }

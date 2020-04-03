@@ -1,0 +1,12 @@
+{
+<<<<<<< HEAD
+    "/js/app.js": "/js/app.js",
+    "/css/app.css": "/css/app.css"
+=======
+    "/site/style.css": "/site/style.css?id=42a2b7915213ae1d2f10",
+    "/site/css/style.css": "/site/css/style.css?id=c753b760eca9d3432b1b",
+    "/site/js/script.js": "/site/js/script.js?id=fe5cec05d30fbe9b3c40",
+    "/site/jquery.js": "/site/jquery.js?id=11c05eb286ed576526bf",
+    "/site/bootstrap.js": "/site/bootstrap.js?id=1a94abb2d5270a12fa1f"
+>>>>>>> aa327e46c8d9642e35b8c69ff17f7ab27c95b819
+}

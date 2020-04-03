@@ -68,7 +68,11 @@ return [
     */
 
     //'timezone' => 'UTC',
+<<<<<<< HEAD
+    'timezone' => 'America/Sao_Paulo',
+=======
     'timezone' => 'America/Recife',
+>>>>>>> aa327e46c8d9642e35b8c69ff17f7ab27c95b819
 
     /*
     |--------------------------------------------------------------------------
