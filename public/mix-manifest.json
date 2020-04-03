@@ -1,4 +1,7 @@
 {
-    "/js/app.js": "/js/app.js",
-    "/css/app.css": "/css/app.css"
+    "/site/style.css": "/site/style.css?id=42a2b7915213ae1d2f10",
+    "/site/css/style.css": "/site/css/style.css?id=1a26fe5c350394cf89e5",
+    "/site/js/script.js": "/site/js/script.js?id=fe5cec05d30fbe9b3c40",
+    "/site/jquery.js": "/site/jquery.js?id=11c05eb286ed576526bf",
+    "/site/bootstrap.js": "/site/bootstrap.js?id=1a94abb2d5270a12fa1f"
 }
