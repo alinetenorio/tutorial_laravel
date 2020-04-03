@@ -17,8 +17,16 @@ use App\Http\Controllers\FormAuto\TestController;
 *   HOME
 */
 Route ::get('/', function () {
-    return view('welcome');
-});
+    return view('site.home');
+})->name('site.home');
+
+Route ::get('/cursos', function () {
+    return view('site.cursos');
+})->name('site.cursos');
+
+Route ::get('/contato', function () {
+    return view('site.contato');
+})->name('site.contato');
 
 /*
 *    USER
@@ -43,3 +51,7 @@ Route::group(['namespace' => 'Form'], function(){
 
 //Route::resource('user', 'FormAuto\\TestController')->names('user')->parameters(["user"=>"usuario"]);
 Route::resource('user', 'FormAuto\\TestController');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
