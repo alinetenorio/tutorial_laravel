@@ -28,6 +28,15 @@ Route ::get('/contato', function () {
     return view('site.contato');
 })->name('site.contato');
 
+Route::get('send-email', function(){
+    $user = new stdClass();
+    $user->name = "aline";
+    $user->email = 'aline.tenorio96@gmail.com';
+
+    // return new \App\Mail\laravelTips($user);
+    Mail::send(new \App\Mail\laravelTips($user));
+});
+
 /*
 *    USER
 */
