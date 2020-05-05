@@ -37,6 +37,8 @@ Route::get('send-email', function(){
     Mail::send(new \App\Mail\laravelTips($user));
 });
 
+Route::view('form','upload.form')->name('form');
+Route::post('upload','UploadController@upload')->name('upload');
 /*
 *    USER
 */
