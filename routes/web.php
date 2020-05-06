@@ -11,7 +11,7 @@
 |
 */
 
-use App\Http\Controllers\FormAuto\TestController;
+use App\Http\Controllers;
 
 /*
 *   HOME
@@ -61,7 +61,7 @@ Route::group(['namespace' => 'Form'], function(){
 */
 
 //Route::resource('user', 'FormAuto\\TestController')->names('user')->parameters(["user"=>"usuario"]);
-Route::resource('user', 'FormAuto\\TestController');
+//Route::resource('user', 'FormAuto\\TestController');
 
 Auth::routes();
 

@@ -37,4 +37,22 @@ class LoginController extends Controller
     {
         $this->middleware('guest')->except('logout');
     }
+
+    public function authenticate(Request $request)
+    {
+        dd("gragra");
+        $credentials = $request->only('email', 'password');
+
+        if (Auth::attempt($credentials)) {
+            // Authentication passed...
+            //return redirect()->intended('dashboard');
+            $login['success'] = true;
+            //$login['message'] = "Inválido";
+            echo json_encode($login);
+        }
+
+        $login['success'] = false;
+        $login['message'] = "Inválido";
+        echo json_encode($login);
+    }
 }

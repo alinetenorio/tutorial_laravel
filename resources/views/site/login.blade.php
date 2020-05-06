@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('site.master.layout')
 
 @section('content')
 <div class="container">
@@ -8,7 +8,7 @@
                 <div class="card-header">{{ __('Login') }}</div>
 
                 <div class="card-body">
-                    <form method="POST" name="formLogin"> <!--action="{{ route('login') }}"-->
+                    <form method="POST" action="{{ route('login') }}">
                         @csrf
 
                         <div class="form-group row">
@@ -72,22 +72,10 @@
 </div>
 @endsection
 
-@section('javascript')
+@section('scripts')
 <script>
     $(function(){
-        $('form[name="formLogin"]').submit(function(){
-            event.preventDefault(); //impede que a tela recarregue
-
-            $.ajax({
-                url: "{{ route('login') }}",
-                type: "POST",
-                data: $(this).serialize(),
-                dataType: "json",
-                success: function(response){
-                    console.log(response);
-                }
-            });
-        });
+        alert('teste');
     });
 </script>
 @endsection

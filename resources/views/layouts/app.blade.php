@@ -76,5 +76,10 @@
             @yield('content')
         </main>
     </div>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <!-- requisito AJAX -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.form/4.2.2/jquery.form.min.js" integrity="sha384-FzT3vTVGXqf7wRfy8k4BiyzvbNfeYjK+frTVqZeNDFl8woCbF0CYG6g2fMEFFo/i" crossorigin="anonymous"></script>
+
+    @yield('javascript')
 </body>
 </html>
